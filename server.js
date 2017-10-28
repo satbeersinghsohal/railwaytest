@@ -19,9 +19,6 @@ app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.get('*', function(req, res) {
-    res.sendfile(__dirname+'/hello.html');
-})
 
 app.post('/passenger', function(request, response) {
     Passenger.find({email:request.body.email},function(err, passenger) {
